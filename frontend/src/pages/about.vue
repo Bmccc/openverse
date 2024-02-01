@@ -7,65 +7,77 @@
       {{ $t("about.description.content", { openverse: "Openverse" }) }}
     </p>
 
-    <i18n path="about.collection.content" tag="p">
-      <template #openverse>Openverse</template>
-      <template #commonCrawl>
-        <VLink href="https://commoncrawl.org/">Common Crawl</VLink>
-      </template>
-    </i18n>
+    <p>
+      <i18n path="about.collection.content.a" tag="span">
+        <template #openverse>Openverse</template>
+        <template #commonCrawl>
+          <VLink href="https://commoncrawl.org/">Common Crawl</VLink>
+        </template>
+      </i18n>
+      {{ $t("about.collection.content.b") }}
+    </p>
 
-    <i18n path="about.planning.content" tag="p">
-      <template #openverse>Openverse</template>
-      <template #frontend>
-        <VLink href="https://github.com/wordpress/openverse-frontend/">{{
-          $t("about.planning.frontend", { openverse: "Openverse" })
-        }}</VLink>
-      </template>
-      <template #api>
-        <VLink href="https://github.com/wordpress/openverse-api/">{{
-          $t("about.planning.api", { openverse: "Openverse" })
-        }}</VLink>
-      </template>
-      <template #catalog>
-        <VLink href="https://github.com/wordpress/openverse-catalog/">{{
-          $t("about.planning.catalog", { openverse: "Openverse" })
-        }}</VLink>
-      </template>
-      <template #community>
-        <VLink href="https://make.wordpress.org/openverse/">{{
-          $t("about.planning.community")
-        }}</VLink>
-      </template>
-      <template #working>
-        <VLink href="https://github.com/orgs/WordPress/projects/3">{{
-          $t("about.planning.working")
-        }}</VLink>
-      </template>
-    </i18n>
+    <p>
+      {{ $t("about.planning.content.a", { openverse: "Openverse" }) }}
+      {{ $t("about.planning.content.b") }}
+      <i18n path="about.planning.content.c" tag="span">
+        <template #openverse>Openverse</template>
+        <template #frontend>
+          <VLink href="https://github.com/wordpress/openverse-frontend/">{{
+            $t("about.planning.frontend", { openverse: "Openverse" })
+          }}</VLink>
+        </template>
+        <template #api>
+          <VLink href="https://github.com/wordpress/openverse-api/">{{
+            $t("about.planning.api", { openverse: "Openverse" })
+          }}</VLink>
+        </template>
+        <template #catalog>
+          <VLink href="https://github.com/wordpress/openverse-catalog/">{{
+            $t("about.planning.catalog", { openverse: "Openverse" })
+          }}</VLink>
+        </template>
+        <template #community>
+          <VLink href="https://make.wordpress.org/openverse/">{{
+            $t("about.planning.community")
+          }}</VLink>
+        </template>
+        <template #working>
+          <VLink href="https://github.com/orgs/WordPress/projects/3">{{
+            $t("about.planning.working")
+          }}</VLink>
+        </template>
+      </i18n>
+    </p>
 
-    <i18n path="about.transfer.content" tag="p">
-      <template #openverse>Openverse</template>
-      <template #creativeCommons>
-        <VLink
-          href="https://creativecommons.org/2021/05/03/cc-search-to-join-wordpress/"
-          >Creative Commons</VLink
-        >
-      </template>
-      <template #wordpress>
-        <VLink href="https://ma.tt/2021/04/cc-search-to-join-wordpress-org/"
-          >WordPress</VLink
-        >
-      </template>
-    </i18n>
+    <p>
+      {{ $t("about.transfer.content.a", { openverse: "Openverse" }) }}
+      <i18n path="about.transfer.content.b" tag="span">
+        <template #creativeCommons>
+          <VLink
+            href="https://creativecommons.org/2021/05/03/cc-search-to-join-wordpress/"
+            >Creative Commons</VLink
+          >
+        </template>
+        <template #wordpress>
+          <VLink href="https://ma.tt/2021/04/cc-search-to-join-wordpress-org/"
+            >WordPress</VLink
+          >
+        </template>
+      </i18n>
+      {{ $t("about.transfer.content.c") }}
+    </p>
 
-    <i18n path="about.declaration.content" tag="p">
-      <template #openverse>Openverse</template>
-      <template #terms>
-        <VLink href="https://creativecommons.org/terms/">{{
-          $t("about.declaration.terms", { openverse: "Openverse" })
-        }}</VLink>
-      </template>
-    </i18n>
+    <p>
+      {{ $t("about.declaration.content.a", { openverse: "Openverse" }) }}
+      <i18n path="about.declaration.content.b" tag="span">
+        <template #terms>
+          <VLink href="https://creativecommons.org/terms/">{{
+            $t("about.declaration.terms", { openverse: "Openverse" })
+          }}</VLink>
+        </template>
+      </i18n>
+    </p>
 
     <h2 id="external-sources">
       {{ $t("externalSourcesPage.title") }}
@@ -77,18 +89,30 @@
         <VLink href="/sources">{{ $t("externalSourcesPage.link") }}</VLink>
       </template>
     </i18n>
+
     <p>
-      {{ $t("externalSourcesPage.license", { openverse: "Openverse" }) }}
+      {{ $t("externalSourcesPage.license.a", { openverse: "Openverse" }) }}
+      {{ $t("externalSourcesPage.license.b", { openverse: "Openverse" }) }}
+      {{ $t("externalSourcesPage.license.c") }}
     </p>
+
     <p>
       {{ $t("externalSourcesPage.explanation", { openverse: "Openverse" }) }}
     </p>
+
     <p>
-      {{ $t("externalSourcesPage.relationships", { openverse: "Openverse" }) }}
+      {{
+        $t("externalSourcesPage.relationships.a", { openverse: "Openverse" })
+      }}
+      {{
+        $t("externalSourcesPage.relationships.b", { openverse: "Openverse" })
+      }}
     </p>
+
     <h2>
       {{ $t("externalSourcesPage.new.title") }}
     </h2>
+
     <i18n path="externalSourcesPage.new.content" tag="p">
       <template #issue>
         <VLink
@@ -108,16 +132,16 @@
     </h2>
     <i18n path="externalSourcesPage.why.content" tag="p">
       <template #old>
-        <VLink
-          aria-label="email"
-          href="https://oldsearch.creativecommons.org"
-          >{{ $t("externalSourcesPage.why.old") }}</VLink
+        <VLink href="https://oldsearch.creativecommons.org"
+          >oldsearch.creativecommons.org</VLink
         >
       </template>
     </i18n>
 
     <p>
-      {{ $t("externalSourcesPage.why.new", { openverse: "Openverse" }) }}
+      {{ $t("externalSourcesPage.why.new.a", { openverse: "Openverse" }) }}
+      {{ $t("externalSourcesPage.why.new.b") }}
+      {{ $t("externalSourcesPage.why.new.c") }}
     </p>
     <i18n path="externalSourcesPage.why.feedbackSuggestions" tag="p">
       <template #feedback>

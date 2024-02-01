@@ -87,10 +87,16 @@ export = {
           "Common Crawl",
           "Creative Commons",
           "Europeana",
+          "Europeana API",
+          "Smithsonian Institute",
           "Flickr",
           "Openverse",
           "WordPress",
+
+          // Domains and emails
           "openverse@wordpress.org",
+          "oldsearch.creativecommons.org",
+          "Openverse.org",
         ],
       },
     ],
