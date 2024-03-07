@@ -1,5 +1,5 @@
 <template>
-  <div v-if="normalizedTags.length && additionalSearchViews">
+  <div v-if="normalizedTags.length && additionalSearchViews" class="-my-1.5px">
     <ul
       ref="tagsContainerRef"
       :aria-label="$t('mediaDetails.tags.title').toString()"
@@ -55,7 +55,6 @@ import { useResizeObserver, watchDebounced } from "@vueuse/core"
 
 import type { Tag } from "~/types/media"
 import { useFeatureFlagStore } from "~/stores/feature-flag"
-
 import { focusElement } from "~/utils/focus-management"
 
 import VMediaTag from "~/components/VMediaTag/VMediaTag.vue"
@@ -91,6 +90,16 @@ export default defineComponent({
     })
 
     const fourthRowStartsAt = ref<number>()
+    const dir = computed(() => {
+      return app.i18n.localeProperties.dir
+    })
+
+    function isFurtherInline(previous: HTMLElement, current: HTMLElement) {
+      if (dir.value === "rtl") {
+        return previous.offsetLeft < current.offsetLeft
+      }
+      return previous.offsetLeft > current.offsetLeft
+    }
 
     function findFourthRowStartsAt(parent: HTMLElement) {
       const children = Array.from(parent.children)
@@ -100,11 +109,10 @@ export default defineComponent({
       let rowCount = 0
       for (let i = 0; i < children.length; i++) {
         const child = children[i] as HTMLElement
-        if (
-          !child.previousElementSibling ||
-          (child.previousElementSibling as HTMLElement).offsetLeft >
-            child.offsetLeft
-        ) {
+        const previous = child.previousElementSibling as HTMLElement
+        if (!previous) {
+          rowCount++
+        } else if (isFurtherInline(previous, child)) {
           rowCount++
         }
         if (rowCount === 4) {
