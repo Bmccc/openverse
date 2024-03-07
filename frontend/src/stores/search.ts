@@ -305,9 +305,6 @@ export const useSearchStore = defineStore("search", {
       this.strategy = "default"
 
       this.addRecentSearch(formattedTerm)
-
-      const mediaStore = useMediaStore()
-      mediaStore.clearMedia()
     },
     /**
      * This method need not exist and is only used to fix an odd
@@ -523,6 +520,9 @@ export const useSearchStore = defineStore("search", {
       })
 
       this.strategy = "default"
+
+      const mediaStore = useMediaStore()
+      mediaStore.clearMedia()
 
       this.setSearchTerm(query.q)
       this.searchType = pathToSearchType(path)
